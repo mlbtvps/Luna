@@ -230,6 +230,7 @@ def get_readable_message():
                 globals()['COUNT'] -= STATUS_LIMIT
                 globals()['PAGE_NO'] -= 1
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
+            bmsg += f"<b>‎‎<a href='https://t.me/leechanimegp'>Powered By Source Please</a></b>\n"
             msg += f"<b>{escape(str(download.name()))}</b>\n"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_CONVERTING, MirrorStatus.STATUS_QUEUEDL, MirrorStatus.STATUS_QUEUEUP]:
                 msg += f"\n<b>┌ {download.status()} with {download.eng()}</b>"
@@ -308,7 +309,7 @@ def get_readable_message():
         bmsg += f"\n<b>• Free Disk:</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
         bmsg += f"\n<b>• Total Downloading Speed:</b> {get_readable_file_size(dl_speed)}/s"
         bmsg += f"\n<b>• Total Uploading Speed:</b> {get_readable_file_size(up_speed)}/s"
-        bmsg += f"<b>‎‎<a href='https://t.me/leechanimegp'>Powered By Source Please</a></b>\n"
+        bmsg += f"<b>• ‎‎<a href='https://t.me/leechanimegp'>Powered By Source Please</a></b>\n"
 
         buttons = ButtonMaker()
         buttons.sbutton("Refresh", "status refresh")
