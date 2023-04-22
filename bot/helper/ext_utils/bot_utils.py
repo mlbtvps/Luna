@@ -259,6 +259,7 @@ def get_readable_message():
                     msg += f"\n<b>└ Cancel: </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
 
             elif download.status() == MirrorStatus.STATUS_SEEDING:
+                msg += f"\n<b><a href='https://t.me/leechanimegp'>{get_progress_bar_string(download.progress())}</a></b> {download.progress()}"
                 msg += f"\n<b>┌ Size: </b>{download.size()}"
                 msg += f"\n<b>├ Engine:</b> <code>qBittorrent v4.4.2</code>"
                 msg += f"\n<b>├ Speed: </b>{download.upload_speed()}"
@@ -637,7 +638,7 @@ def bot_sys_stats():
         if stats.status() == MirrorStatus.STATUS_SPLITTING:
             num_split += 1
     return f"""
-Modified by Chishiya.
+Modified by Source Please.
 
 Tasks: {tasks}
 
