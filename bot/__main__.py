@@ -76,7 +76,7 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<a href="https://github.com/5hojib/hk-upstream"><b><u>REPOSITORY INFO</u></b></a>\n\n' \
+    stats = f'<a href="https://t.me/leechanimegp"><b><u>Powered By Source Please</u></b></a>\n\n' \
             f'<b>• Repository Version:</b> {version}\n'\
             f'<b>• Updated:</b> {commit_date}\n'\
             f'<b>• Committed on:</b>{commit_time}\n'\
