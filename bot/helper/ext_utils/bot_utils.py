@@ -232,7 +232,6 @@ def get_readable_message():
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
             msg += f"<b>{escape(str(download.name()))}</b>\n"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_CONVERTING, MirrorStatus.STATUS_QUEUEDL, MirrorStatus.STATUS_QUEUEUP]:
-                msg += f"\n<b><a href='https://t.me/leechanimegp'>{get_progress_bar_string(download.progress())}</a></b> {download.progress()}"
                 msg += f"\n<b>┌ {download.status()} with {download.eng()}</b>"
                 msg += f"\n<b>├ {get_progress_bar_string(download)}</b> {download.progress()}"
                 msg += f"\n<b>├ Process:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
@@ -259,7 +258,6 @@ def get_readable_message():
                     msg += f"\n<b>└ Cancel: </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
 
             elif download.status() == MirrorStatus.STATUS_SEEDING:
-                msg += f"\n<b><a href='https://t.me/leechanimegp'>{get_progress_bar_string(download.progress())}</a></b> {download.progress()}"
                 msg += f"\n<b>┌ Size: </b>{download.size()}"
                 msg += f"\n<b>├ Engine:</b> <code>qBittorrent v4.4.2</code>"
                 msg += f"\n<b>├ Speed: </b>{download.upload_speed()}"
